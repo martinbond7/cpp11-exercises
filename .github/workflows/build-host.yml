@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         environment: build
         container:
-            image: feabhas:ubuntu-projects
+            image: martinbond7:ubuntu-projects:latest
             credentials:
                 username: ${{ secrets.DOCKER_HUB_USER }}
                 password: ${{ secrets.DOCKER_HUB_TOKEN }}
@@ -16,4 +16,4 @@ jobs:
               run: |
                 g++ --version
                 cmake --version              
-                ninja --versions
+                ninja --version
