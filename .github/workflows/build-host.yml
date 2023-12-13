@@ -1,0 +1,16 @@
+name: cpp11-exercises
+
+on: [push]
+
+jobs:
+    build:         
+        runs-on: ubuntu-latest
+        container:
+            image: feabhas:ubuntu-projects
+
+        steps:                      
+            - name: check env  
+              run: |
+                g++ --version
+                cmake --version              
+                ninja --versions
