@@ -7,7 +7,9 @@ jobs:
         runs-on: ubuntu-latest
         container:
             image: feabhas:ubuntu-projects
-
+            credentials:
+                username: ${{ secrets.DOCKER_HUB_USER }}
+                password: ${{ secrets.DOCKER_HUB_TOKEN }}
         steps:                      
             - name: check env  
               run: |
