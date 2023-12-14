@@ -12,8 +12,10 @@ jobs:
             #     username: ${{ secrets.DOCKER_HUB_USER }}
             #     password: ${{ secrets.DOCKER_HUB_TOKEN }}
         steps:                      
-            - name: check env  
+            - name: build  
               run: |
                 echo PWD $PWD
-                ls /home
-                id
+                ls /home/feabhas
+                cp -r /home/feabhas/projects/cmake-host .
+                cd cmake-host
+                bash ./build-one.sh --all                
