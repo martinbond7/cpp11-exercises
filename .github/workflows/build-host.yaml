@@ -32,7 +32,6 @@ jobs:
                 bash ./build-one.sh --all                
             - name: finish 
               run: |
-                ped
+                pwd
                 ls -al $GITHUB_WORKSPACE
                 ls -al
-                
