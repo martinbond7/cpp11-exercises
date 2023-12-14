@@ -8,7 +8,7 @@ jobs:
         environment: build
         container:
             image: feabhas/ubuntu-projects:latest
-            options: -u 1001
+            options: -u root
         steps:
             - name: environment  
               run: |
