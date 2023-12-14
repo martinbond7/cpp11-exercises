@@ -8,6 +8,7 @@ jobs:
         environment: build
         container:
             image: feabhas/ubuntu-projects:latest
+            options: -u feabhas
             # credentials:
             #     username: ${{ secrets.DOCKER_HUB_USER }}
             #     password: ${{ secrets.DOCKER_HUB_TOKEN }}
