@@ -15,7 +15,8 @@ jobs:
             - name: build  
               run: |
                 echo PWD $PWD
-                ls /home/feabhas
-                cp -r /home/feabhas/projects/cmake-host .
-                cd cmake-host
+                cp -r solutions ~/workspace
+                cd ~/workspace
+                cp -r ~/projects/cmake-host .
+                cd make-host
                 bash ./build-one.sh --all                
