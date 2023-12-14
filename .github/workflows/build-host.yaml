@@ -9,9 +9,6 @@ jobs:
         container:
             image: feabhas/ubuntu-projects:latest
             options: -u 1001
-            # credentials:
-            #     username: ${{ secrets.DOCKER_HUB_USER }}
-            #     password: ${{ secrets.DOCKER_HUB_TOKEN }}
         steps:
             - name: environment  
               run: |
@@ -25,10 +22,9 @@ jobs:
               with:
                 sparse-checkout: solutions   
                 fetch-depth: 1               
-            # - name: build  
-            #   run: |
-            #     cp -r ${{ github.workspace }}/solutions ~/workspace
-            #     cd ~/workspace
-            #     cp -r ~/projects/cmake-host .
-            #     cd make-host
-            #     bash ./build-one.sh --all                
+            - name: build  
+              run: |
+                cp -r /home/feabhas/projects/cmake-host .
+                cd cmake-host
+                bash ./build-one.sh --all                
+                
