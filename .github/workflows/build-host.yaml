@@ -17,9 +17,8 @@ jobs:
                 echo PWD $PWD
                 echo DIR *
                 echo GH ${{ github.workspace }}
-                echo GH WS $GITHUB_WORKSPACE
-                find / -name solutions 2>/dev/null
-                cp -r /github/workspace/solutions ~/workspace
+                ls ${{ github.workspace }}
+                cp -r ${{ github.workspace }}/solutions ~/workspace
                 cd ~/workspace
                 cp -r ~/projects/cmake-host .
                 cd make-host
