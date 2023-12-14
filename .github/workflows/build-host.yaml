@@ -14,9 +14,6 @@ jobs:
         steps:                      
             - name: check env  
               run: |
-                pwd
-                ls
-                ls ~
-                g++ --version
-                cmake --version              
-                ninja --version
+                echo PWD $PWD
+                ls /home
+                id
