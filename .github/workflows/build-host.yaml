@@ -30,3 +30,9 @@ jobs:
                 cp -r /home/feabhas/projects/cmake-host .
                 cd cmake-host
                 bash ./build-one.sh --all                
+            - name: finish 
+              run: |
+                ped
+                ls -al $GITHUB_WORKSPACE
+                ls -al
+                
