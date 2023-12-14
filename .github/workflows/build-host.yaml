@@ -15,7 +15,9 @@ jobs:
             - name: build  
               run: |
                 echo PWD $PWD
-                cp -r solutions ~/workspace
+                echo DIR *
+                echo GH WS $GITHUB_WORKSPACE
+                cp -r $GITHUB_WORKSPACE/solutions ~/workspace
                 cd ~/workspace
                 cp -r ~/projects/cmake-host .
                 cd make-host
