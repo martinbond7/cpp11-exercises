@@ -14,6 +14,9 @@ jobs:
         steps:                      
             - name: check env  
               run: |
+                pwd
+                ls
+                ls ~
                 g++ --version
                 cmake --version              
                 ninja --version
