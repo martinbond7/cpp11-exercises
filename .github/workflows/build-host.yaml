@@ -13,8 +13,8 @@ jobs:
             #     username: ${{ secrets.DOCKER_HUB_USER }}
             #     password: ${{ secrets.DOCKER_HUB_TOKEN }}
         steps:
-        - name: environment  
-            - run: |
+            - name: environment  
+              run: |
                 echo PWD $PWD
                 id
                 ls -al
