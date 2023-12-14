@@ -13,18 +13,20 @@ jobs:
             #     username: ${{ secrets.DOCKER_HUB_USER }}
             #     password: ${{ secrets.DOCKER_HUB_TOKEN }}
         steps:
+        - name: environment  
+            - run: |
+                echo PWD $PWD
+                id
+                ls -al
+                echo GH $GITHUB_WORKSPACE
+                ls -al $GITHUB_WORKSPACE
             - name: checkout
               uses: actions/checkout@v4
               with:
                 sparse-checkout: solutions   
-                fetch-depth: 1 
-                path: /home/feabhas                
+                fetch-depth: 1               
             - name: build  
               run: |
-                echo PWD $PWD
-                echo DIR *
-                echo GH $GITHUB_WORKSPACE
-                ls $GITHUB_WORKSPACE
                 cp -r ${{ github.workspace }}/solutions ~/workspace
                 cd ~/workspace
                 cp -r ~/projects/cmake-host .
