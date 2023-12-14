@@ -24,7 +24,10 @@ jobs:
                 fetch-depth: 1               
             - name: build  
               run: |
+                ls -al $GITHUB_WORKSPACE
+                ls -l /home
+                ls -l /home/feabhas
+                find /home/febhas/projects
                 cp -r /home/feabhas/projects/cmake-host .
                 cd cmake-host
                 bash ./build-one.sh --all                
-                
