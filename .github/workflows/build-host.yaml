@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         environment: build
         container:
-            image: feabhas/ubuntu-projects:latest
+            image: feabhas/ubuntu-tdd:latest
             options: -u 1001
         steps:
             - name: environment  
@@ -15,23 +15,23 @@ jobs:
                 echo PWD $PWD
                 id
                 ls -al
-                echo GH $GITHUB_WORKSPACE
-                ls -al $GITHUB_WORKSPACE
+                echo $PATH
+                type gcovr
             - name: checkout
               uses: actions/checkout@v4
               with:
                 sparse-checkout: solutions
                 fetch-depth: 1               
-            - name: build  
-              run: |
-                ls -al $GITHUB_WORKSPACE
-                ls -l /home
-                ls -l /home/feabhas
-                cp -r /home/feabhas/projects/cmake-host .
-                cd cmake-host
-                bash ./build-one.sh --all                
-            - name: finish 
-              run: |
-                pwd
-                ls -al $GITHUB_WORKSPACE
-                ls -al
+            # - name: build  
+            #   run: |
+            #     ls -al $GITHUB_WORKSPACE
+            #     ls -l /home
+            #     ls -l /home/feabhas
+            #     cp -r /home/feabhas/projects/cmake-host .
+            #     cd cmake-host
+            #     bash ./build-one.sh --all                
+            # - name: finish 
+            #   run: |
+            #     pwd
+            #     ls -al $GITHUB_WORKSPACE
+            #     ls -al
